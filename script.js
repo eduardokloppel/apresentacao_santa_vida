@@ -9,7 +9,8 @@ const nodeIcons = document.querySelectorAll('.node-icon');
 
 // Variáveis de controle
 let currentSlide = 0;
-const totalSlides = 5;
+const totalSlides = 7;
+let animationTimers = []; // Array para armazenar os timers de animação
 
 // Modal functionality for graphs
 const modal = document.getElementById('graph-modal');
@@ -34,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Listeners para botões de navegação
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
     
     // Animated button effect
     if (animatedBtn) {
@@ -74,7 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add click event to all chart wrappers
     chartWrappers.forEach(wrapper => {
-        wrapper.addEventListener('click', function() {
+        wrapper.addEventListener('click', function(e) {
+            e.stopPropagation(); // Impedir que o evento de clique do slide seja acionado
             const img = wrapper.querySelector('img');
             if (img) {
                 modal.classList.add('show');
@@ -107,13 +109,17 @@ function initAnimations() {
         setTimeout(typeWriter, 500);
     }
     
-    // Animate node connections
-    animateNodes();
+    // Animate node connections - apenas uma vez
+    animateNodes(true);
 }
 
 // Animate the AI nodes with random movements
-function animateNodes() {
+function animateNodes(isInitial = false) {
     if (nodeIcons.length === 0) return;
+    
+    // Limpar timers anteriores para evitar acúmulo de animações
+    animationTimers.forEach(timer => clearTimeout(timer));
+    animationTimers = [];
     
     nodeIcons.forEach((node, index) => {
         // Create random animation
@@ -125,20 +131,31 @@ function animateNodes() {
         node.style.transition = `transform ${randomDuration}s ease-in-out ${randomDelay}s`;
         node.style.transform = `translate(${randomX}px, ${randomY}px)`;
         
-        // Reset and repeat animation periodically
-        setTimeout(() => {
-            node.style.transform = 'translate(0, 0)';
+        // Reset and repeat animation periodically, apenas para a primeira inicialização
+        if (isInitial) {
+            const timer = setTimeout(() => {
+                node.style.transform = 'translate(0, 0)';
+                
+                // Continue animation loop apenas uma vez (não recursivo)
+                const resetTimer = setTimeout(() => {
+                    const oneMoreTime = setTimeout(() => animateNodes(), randomDuration * 1000);
+                    animationTimers.push(oneMoreTime);
+                }, randomDuration * 1000);
+                
+                animationTimers.push(resetTimer);
+            }, (randomDuration + randomDelay) * 1000);
             
-            // Continue animation loop
-            setTimeout(() => {
-                animateNodes();
-            }, randomDuration * 1000);
-        }, (randomDuration + randomDelay) * 1000);
+            animationTimers.push(timer);
+        }
     });
 }
 
 // Mostrar slide específico com animação
 function showSlide(index) {
+    // Garantir que o índice esteja dentro dos limites
+    if (index < 0) index = 0;
+    if (index >= totalSlides) index = totalSlides - 1;
+    
     // Remover classe active de todos os slides
     slides.forEach(slide => {
         slide.classList.remove('active');
@@ -147,6 +164,9 @@ function showSlide(index) {
     // Adicionar classe active ao slide atual
     slides[index].classList.add('active');
     
+    // Guardar o valor atual do slide
+    currentSlide = index;
+    
     // Animar elementos do slide atual
     animateSlideContent(slides[index]);
     
@@ -154,8 +174,19 @@ function showSlide(index) {
     updateSlideCounter();
     
     // Controlar visibilidade dos botões de navegação
-    prevBtn.style.opacity = index === 0 ? '0.5' : '1';
-    nextBtn.style.opacity = index === totalSlides - 1 ? '0.5' : '1';
+    if (prevBtn) prevBtn.style.opacity = index === 0 ? '0.5' : '1';
+    if (nextBtn) nextBtn.style.opacity = index === totalSlides - 1 ? '0.5' : '1';
+    
+    // Adicionar novamente os listeners para garantir que sempre funcionem
+    if (prevBtn) {
+        prevBtn.removeEventListener('click', prevSlide);
+        prevBtn.addEventListener('click', prevSlide);
+    }
+    
+    if (nextBtn) {
+        nextBtn.removeEventListener('click', nextSlide);
+        nextBtn.addEventListener('click', nextSlide);
+    }
 }
 
 // Animar elementos do slide ao mostrar
@@ -243,23 +274,25 @@ function animateSlideContent(slide) {
 
 // Ir para o próximo slide
 function nextSlide() {
+    console.log("Próximo slide chamado, slide atual:", currentSlide);
     if (currentSlide < totalSlides - 1) {
-        currentSlide++;
-        showSlide(currentSlide);
+        showSlide(currentSlide + 1);
     }
 }
 
 // Ir para o slide anterior
 function prevSlide() {
+    console.log("Slide anterior chamado, slide atual:", currentSlide);
     if (currentSlide > 0) {
-        currentSlide--;
-        showSlide(currentSlide);
+        showSlide(currentSlide - 1);
     }
 }
 
 // Atualizar contador de slides
 function updateSlideCounter() {
-    slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    if (slideCounter) {
+        slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    }
 }
 
 // Adicionar funcionalidade para gerar PDF

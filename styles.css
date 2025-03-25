@@ -1359,15 +1359,11 @@ body {
 }
 
 .impact-card {
-    background-color: white;
+    background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.1), rgba(var(--primary-rgb), 0.05));
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 25px;
+    margin-bottom: 30px;
     box-shadow: var(--shadow-light);
-    text-align: center;
-    min-width: 150px;
-    flex: 1;
-    border: 1px solid var(--light-gray);
-    transition: all 0.3s ease;
 }
 
 .impact-card:hover {
@@ -1387,14 +1383,155 @@ body {
     font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
-    .impact-cards {
-        flex-direction: column;
-    }
-    
-    .impact-card {
-        min-width: auto;
-    }
+.impact-stats {
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.impact-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.two-column-layout {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.two-column-layout .column {
+    flex: 1;
+}
+
+.key-facts {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.key-facts li {
+    padding: 10px 0;
+    position: relative;
+    padding-left: 25px;
+    line-height: 1.5;
+}
+
+.key-facts li:before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+    top: 12px;
+}
+
+.industry-benchmarks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.industry {
+    background-color: rgba(var(--primary-rgb), 0.05);
+    padding: 10px 15px;
+    border-radius: 6px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.industry-name {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.industry-time {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Estilos para slide de comparação de canais */
+.channels-comparison {
+    margin-bottom: 30px;
+}
+
+.comparison-container {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+}
+
+.metric-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.metric-row:last-child {
+    border-bottom: none;
+}
+
+.metric-row > div {
+    padding: 15px;
+    flex: 1;
+    text-align: center;
+}
+
+.metric-label {
+    text-align: left;
+    font-weight: 600;
+    flex: 1.5;
+    background-color: rgba(var(--primary-rgb), 0.02);
+}
+
+.header-row {
+    background-color: var(--background-light);
+}
+
+.header-row > div {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.channel-whatsapp {
+    color: #25D366;
+    font-weight: 600;
+}
+
+.channel-email {
+    color: #4285F4;
+    font-weight: 600;
+}
+
+.channel-sms {
+    color: #FF6B6B;
+    font-weight: 600;
+}
+
+.header-row .channel-whatsapp, 
+.header-row .channel-email, 
+.header-row .channel-sms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-row i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.data-source {
+    font-size: 12px;
+    color: var(--text-light);
+    text-align: right;
+    margin-top: 10px;
+    font-style: italic;
 }
 
 /* Conclusões e Cards */

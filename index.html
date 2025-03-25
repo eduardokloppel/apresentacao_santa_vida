@@ -23,7 +23,7 @@
             <!-- Controles de navegação -->
             <div class="controls modern-controls">
                 <button id="prev-btn" title="Slide anterior"><i class="fas fa-chevron-left"></i></button>
-                <span id="slide-counter">1 / 5</span>
+                <span id="slide-counter">1 / 7</span>
                 <button id="next-btn" title="Próximo slide"><i class="fas fa-chevron-right"></i></button>
                 <button id="fullscreen-btn" title="Modo de apresentação" onclick="toggleFullscreen()"><i class="fas fa-expand"></i></button>
                 <button id="pdf-btn" title="Gerar PDF" onclick="generatePDF()"><i class="fas fa-file-pdf"></i></button>
@@ -200,11 +200,6 @@
                         </div>
                         <div class="slide-body modern-slide">
                             <div class="insights-wrapper">
-                                <div class="key-insight">
-                                    <h3><i class="fas fa-lightbulb"></i> Descobertas Importantes</h3>
-                                    <p>O chatbot estava impactando as métricas anteriores, mascarando o tempo real de resposta dos atendentes humanos.</p>
-                                </div>
-                                
                                 <div class="columns-container">
                                     <div class="column">
                                         <div class="insight-box">
@@ -226,6 +221,8 @@
                                     <h3><i class="fas fa-cogs"></i> Aplicações Práticas</h3>
                                     <ul>
                                         <li>Ajustar a escala de trabalho para cobrir melhor os horários críticos (5h, 6h e 21h)</li>
+                                        <li>Implementação de um <span class="highlight">"Oráculo" </span> interno para atendentes consultarem dúvidas complexas</li>
+                                        <li>Implementação de um <span class="highlight">chatbot avançado com IA</span>  que saiba responder perguntas de forma humanizada e abrangente</li>
                                         <li>Estabelecer metas mais realistas de tempo de resposta baseadas no novo tempo mediano</li>
                                         <li>Identificar os melhores horários para treinamentos e reuniões (quando o volume de atendimento é menor)</li>
                                     </ul>
@@ -235,11 +232,156 @@
                     </div>
                 </section>
 
-                <!-- Slide 5: Impacto do Tempo de Resposta -->
+                <!-- Slide 5: Importância do Tempo de Resposta -->
                 <section class="slide" id="slide-5">
                     <div class="slide-content">
                         <div class="slide-header">
-                            <h2>O Impacto do Tempo de Resposta</h2>
+                            <h2>A Importância da Resposta Rápida</h2>
+                        </div>
+                        <div class="slide-body modern-slide">
+                            <div class="insight-card impact-card">
+                                <div class="stat-group impact-stats">
+                                    <div class="stat">
+                                        <div class="big-number">27%</div>
+                                        <span class="stat-label">Aumento nas vendas</span>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="big-number">68%</div>
+                                        <span class="stat-label">Retenção de clientes</span>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="big-number">225%</div>
+                                        <span class="stat-label">Aceleração no ciclo de vendas</span>
+                                    </div>
+                                </div>
+                                <div class="impact-subtitle">Benefícios para empresas que respondem em ≤1 minuto</div>
+                            </div>
+                            
+                            <div class="two-column-layout">
+                                <div class="column">
+                                    <div class="research-data">
+                                        <h3><i class="fas fa-brain"></i> Psicologia do Consumidor</h3>
+                                        <ul class="key-facts">
+                                            <li><span class="highlight">78%</span> dos compradores escolhem a primeira empresa que responde</li>
+                                            <li>Cada minuto de atraso reduz a taxa de conversão em <span class="highlight">7,2%</span></li>
+                                            <li>Respostas ágeis estimulam a liberação de dopamina, reforçando a percepção positiva da marca</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="research-data">
+                                        <h3><i class="fas fa-chart-line"></i> Tempo vs. Conversão</h3>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Tempo de Resposta</th>
+                                                        <th>Taxa de Conversão</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>≤ 1 minuto</td>
+                                                        <td class="highlight-value">23%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1-5 minutos</td>
+                                                        <td>18%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5-30 minutos</td>
+                                                        <td>9%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>> 24 horas</td>
+                                                        <td>1%</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="key-insight">
+                                <h3><i class="fas fa-clock"></i> Tempo Ideal de Resposta por Setor</h3>
+                                <div class="industry-benchmarks">
+                                    <div class="industry"><span class="industry-name">Varejo:</span> <span class="industry-time">≤ 90 segundos</span></div>
+                                    <div class="industry"><span class="industry-name">Serviços Financeiros:</span> <span class="industry-time">≤ 45 segundos</span></div>
+                                    <div class="industry"><span class="industry-name">Saúde:</span> <span class="industry-time">≤ 2 minutos</span></div>
+                                    <div class="industry"><span class="industry-name">Automotivo:</span> <span class="industry-time">≤ 75 segundos</span></div>
+                                </div>
+                                <div class="data-source">Fonte: Voiso (2025) | Análise OmniChat (2024)</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 6: WhatsApp vs Outros Canais -->
+                <section class="slide" id="slide-6">
+                    <div class="slide-content">
+                        <div class="slide-header">
+                            <h2>WhatsApp vs. Outros Canais</h2>
+                        </div>
+                        <div class="slide-body modern-slide">
+                            <div class="channels-comparison">
+                                <div class="comparison-container">
+                                    <div class="metric-row header-row">
+                                        <div class="metric-label"></div>
+                                        <div class="channel-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</div>
+                                        <div class="channel-email"><i class="far fa-envelope"></i> E-mail</div>
+                                        <div class="channel-sms"><i class="far fa-comment-dots"></i> SMS</div>
+                                    </div>
+                                    
+                                    <div class="metric-row">
+                                        <div class="metric-label">Taxa de Abertura</div>
+                                        <div class="channel-whatsapp">70%</div>
+                                        <div class="channel-email">21%</div>
+                                        <div class="channel-sms">45%</div>
+                                    </div>
+                                    
+                                    <div class="metric-row">
+                                        <div class="metric-label">Taxa de Conversão</div>
+                                        <div class="channel-whatsapp">45-60%</div>
+                                        <div class="channel-email">2-5%</div>
+                                        <div class="channel-sms">3-8%</div>
+                                    </div>
+                                    
+                                    <div class="metric-row">
+                                        <div class="metric-label">Custo por Lead</div>
+                                        <div class="channel-whatsapp">R$ 1,20</div>
+                                        <div class="channel-email">R$ 4,50</div>
+                                        <div class="channel-sms">R$ 3,80</div>
+                                    </div>
+                                    
+                                    <div class="metric-row">
+                                        <div class="metric-label">Janela Crítica de Conversão</div>
+                                        <div class="channel-whatsapp">5 minutos</div>
+                                        <div class="channel-email">1 hora</div>
+                                        <div class="channel-sms">15 minutos</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="key-insight">
+                                <p>O WhatsApp gera <span class="highlight-value">4,3x</span> mais conversões que o e-mail para o mesmo investimento em marketing.</p>
+                            </div>
+                            
+                            <div class="chart-insight">
+                                <i class="fas fa-lightbulb"></i>
+                                <p>A eficácia decai quadraticamente com o tempo no WhatsApp, comparado a um declínio linear em outros canais.</p>
+                            </div>
+                            
+                            <div class="data-source">Fonte: DoubleTick (2024) | LeadAngel</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 7: Conclusões e Próximos Passos -->
+                <section class="slide" id="slide-7">
+                    <div class="slide-content">
+                        <div class="slide-header">
+                            <h2>Conclusões e Próximos Passos</h2>
                         </div>
                         <div class="slide-body modern-slide">
                             <div class="insights-wrapper">
@@ -247,7 +389,7 @@
                                     <div class="card-content">
                                         <i class="fas fa-lightbulb insight-icon"></i>
                                         <div class="card-text">
-                                            <h3>Conclusões da Nova Análise</h3>
+                                            <h3>Conclusões da Análise</h3>
                                             <ul class="conclusions">
                                                 <li>O tempo médio de resposta humana é de <span class="highlight">8,69 minutos</span></li>
                                                 <li>O tempo mediano é de apenas <span class="highlight">1,77 minutos</span>, 47% menor que o valor anterior</li>
@@ -260,44 +402,18 @@
                                 </div>
                             </div>
 
-                            <div class="research-data">
-                                <h3><i class="fas fa-chart-line"></i> Tempo de Resposta vs Taxa de Conversão</h3>
-                                
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Tempo de Resposta</th>
-                                                <th>Taxa de Conversão Média</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>≤ 1 minuto</td>
-                                                <td class="highlight-value">23%</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1-5 minutos</td>
-                                                <td>18%</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5-30 minutos</td>
-                                                <td>9%</td>
-                                            </tr>
-                                            <tr>
-                                                <td>> 24 horas</td>
-                                                <td>1%</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                
-                                <div class="key-insight">
-                                    <p>Nosso tempo mediano atual de <span class="highlight-value">1,77 minutos</span> nos coloca em posição privilegiada de conversão potencial, mas os horários críticos (5h, 6h e 21h) ainda precisam de melhorias.</p>
-                                </div>
-                                
-                                <div class="data-source">Nova análise com 28.703 interações (2024)</div>
+                            <div class="key-insight">
+                                <h3><i class="fas fa-cogs"></i> Recomendações</h3>
+                                <ul>
+                                    <li>Ajustar a escala de trabalho para cobrir melhor os horários críticos (5h, 6h e 21h)</li>
+                                    <li>Estabelecer meta de tempo de resposta de no máximo 2 minutos para alinhar com o setor de saúde</li>
+                                    <li>Implementar sistema "Oráculo" interno para atendentes consultarem dúvidas complexas dos clientes e reduzirem o tempo de resposta</li>
+                                    <li>Desenvolver chatbot avançado com IA que saiba responder perguntas de forma humanizada e abrangente</li>
+                                    <li>Aproveitar o WhatsApp como canal principal pela sua taxa de conversão superior (45-60%)</li>
+                                </ul>
                             </div>
+                                
+                            <div class="data-source">Nova análise com 28.703 interações (2024)</div>
                         </div>
                     </div>
                 </section>
