@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <!-- Barra de navegação fixa -->
+    <div class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <span class="logo-text">Automate<span class="logo-accent">Labs</span></span>
+            </div>
+        </div>
+    </div>
+    
     <div class="presentation-wrapper">
         <div class="presentation-container">
             <!-- Modal para exibir gráficos -->
@@ -27,13 +36,6 @@
                 <button id="next-btn" title="Próximo slide"><i class="fas fa-chevron-right"></i></button>
                 <button id="fullscreen-btn" title="Modo de apresentação" onclick="toggleFullscreen()"><i class="fas fa-expand"></i></button>
                 <button id="pdf-btn" title="Gerar PDF" onclick="generatePDF()"><i class="fas fa-file-pdf"></i></button>
-            </div>
-
-            <!-- Branding sutil no topo esquerdo -->
-            <div class="presentation-branding">
-                <div class="presentation-logo">
-                    <span class="logo-text">Automate<span class="logo-accent">Labs</span></span>
-                </div>
             </div>
 
             <!-- Slides -->
