@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutomateLabs - Análise de Atendimento Santa Vida</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="print.css" media="print">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="presentation-wrapper">
+        <div class="presentation-container">
+            <!-- Modal para exibir gráficos -->
+            <div id="graph-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <img id="modal-image" src="" alt="Gráfico expandido">
+                </div>
+            </div>
+            
+            <!-- Controles de navegação -->
+            <div class="controls modern-controls">
+                <button id="prev-btn" title="Slide anterior"><i class="fas fa-chevron-left"></i></button>
+                <span id="slide-counter">1 / 5</span>
+                <button id="next-btn" title="Próximo slide"><i class="fas fa-chevron-right"></i></button>
+                <button id="fullscreen-btn" title="Modo de apresentação" onclick="toggleFullscreen()"><i class="fas fa-expand"></i></button>
+                <button id="pdf-btn" title="Gerar PDF" onclick="generatePDF()"><i class="fas fa-file-pdf"></i></button>
+            </div>
+
+            <!-- Branding sutil no topo esquerdo -->
+            <div class="presentation-branding">
+                <div class="presentation-logo">
+                    <span class="logo-text">Automate<span class="logo-accent">Labs</span></span>
+                </div>
+            </div>
+
+            <!-- Slides -->
+            <div class="slides-container">
+                <!-- Slide 1: Introdução -->
+                <section class="slide active" id="slide-1">
+                    <div class="slide-content">
+                        <div class="slide-header">
+                            <h1>Análise de Atendimento do Hospital Veterinário Santa Vida</h1>
+                            <div class="client-logo">
+                                <div class="logo-placeholder">
+                                    <i class="fas fa-paw"></i> Santa Vida
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-body modern-slide">
+                            <div class="hero-content">
+                                <div class="intro-text">
+                                    <p class="intro-tagline">Transformando o atendimento veterinário com Inteligência Artificial</p>
+                                    <p>
+                                        No setor veterinário, o atendimento ao cliente é essencial para a satisfação e fidelização. 
+                                        Hoje, vamos explorar os dados de atendimento do Hospital Veterinário Santa Vida, entender 
+                                        os padrões de comunicação com os clientes e discutir como podemos otimizar o serviço para 
+                                        atender melhor às suas necessidades.
+                                    </p>
+                                    <div class="hero-cta">
+                                        <button class="btn-primary animated-btn">Começar análise</button>
+                                    </div>
+                                </div>
+                                <div class="hero-visual">
+                                    <div class="tech-illustration">
+                                        <div class="ai-nodes">
+                                            <i class="fas fa-chart-line node-icon"></i>
+                                            <i class="fas fa-comments node-icon"></i>
+                                            <i class="fas fa-robot node-icon"></i>
+                                            <div class="node-connection"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-footer">
+                            <p>Análise de 200 conversas de WhatsApp | 2024</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 2: Tempos de Resposta -->
+                <section class="slide" id="slide-2">
+                    <div class="slide-content">
+                        <div class="slide-header">
+                            <h2>Análise de Tempos de Resposta</h2>
+                        </div>
+                        <div class="slide-body modern-slide">
+                            <div class="insight-card">
+                                <div class="stat-group">
+                                    <div class="stat">
+                                        <div class="big-number">8,69</div>
+                                        <span class="stat-unit">min</span>
+                                        <span class="stat-label">Tempo Médio</span>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="big-number">1,77</div>
+                                        <span class="stat-unit">min</span>
+                                        <span class="stat-label">Tempo Mediano</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="charts-container modern-charts">
+                                <div class="chart">
+                                    <h3>Tempo Médio por Dia da Semana</h3>
+                                    <div class="chart-wrapper">
+                                        <img src="tempo_resposta_por_dia.png" alt="Gráfico de tempo por dia da semana">
+                                    </div>
+                                    <div class="chart-insight">
+                                        <i class="fas fa-lightbulb"></i>
+                                        <p>Segunda-feira tem o maior tempo médio: 9,39 minutos.</p>
+                                    </div>
+                                </div>
+                                <div class="chart">
+                                    <h3>Análise da Nova Base de Dados</h3>
+                                    <div class="insight-box modern-insight">
+                                        <i class="fas fa-database"></i>
+                                        <p>Total de <span class="highlight">28.703</span> interações analisadas</p>
+                                    </div>
+                                    <div class="chart-insight">
+                                        <i class="fas fa-lightbulb"></i>
+                                        <p>Quinta-feira tem o menor tempo médio: 8,09 minutos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-reflection">
+                                <div class="reflection-wrapper">
+                                    <i class="fas fa-comment-dots"></i>
+                                    <p>O tempo mediano de 1,77 minutos indica que a maioria das respostas é bastante rápida, enquanto o tempo médio é maior devido a alguns casos que demoram mais.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 3: Horários Críticos -->
+                <section class="slide" id="slide-3">
+                    <div class="slide-content">
+                        <div class="slide-header">
+                            <h2>Horários Críticos de Atendimento</h2>
+                        </div>
+                        <div class="slide-body modern-slide">
+                            <div class="insight-card">
+                                <div class="highlight-stat">
+                                    <div class="big-number">20,06</div>
+                                    <span class="stat-unit">min</span>
+                                    <span class="stat-description">é o tempo médio de resposta às 06h, o horário mais crítico</span>
+                                </div>
+                            </div>
+                            <div class="table-container modern-table">
+                                <table class="comparison-table">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Horários Críticos</th>
+                                            <th colspan="2">Horários Eficientes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>06h</td>
+                                            <td><span class="variation-negative">20,06 min</span></td>
+                                            <td>07h</td>
+                                            <td><span class="variation-positive">1,18 min</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>05h</td>
+                                            <td><span class="variation-negative">15,97 min</span></td>
+                                            <td>08h</td>
+                                            <td><span class="variation-positive">2,14 min</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>21h</td>
+                                            <td><span class="variation-negative">11,12 min</span></td>
+                                            <td>09h</td>
+                                            <td><span class="variation-positive">3,19 min</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="chart-wrapper">
+                                <img src="tempo_resposta_por_hora.png" alt="Gráfico de tempo por hora do dia">
+                            </div>
+                            <div class="slide-reflection">
+                                <div class="reflection-wrapper">
+                                    <i class="fas fa-comment-dots"></i>
+                                    <p>Existe uma clara diferença de performance por horário: o início da manhã (7h-9h) tem os melhores tempos, enquanto a madrugada (5h-6h) e o período noturno (21h-23h) apresentam tempos mais elevados.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 4: Insights da Nova Análise -->
+                <section class="slide" id="slide-4">
+                    <div class="slide-content">
+                        <div class="slide-header">
+                            <h2>Insights da Nova Análise</h2>
+                        </div>
+                        <div class="slide-body modern-slide">
+                            <div class="insights-wrapper">
+                                <div class="key-insight">
+                                    <h3><i class="fas fa-lightbulb"></i> Descobertas Importantes</h3>
+                                    <p>O chatbot estava impactando as métricas anteriores, mascarando o tempo real de resposta dos atendentes humanos.</p>
+                                </div>
+                                
+                                <div class="columns-container">
+                                    <div class="column">
+                                        <div class="insight-box">
+                                            <i class="fas fa-chart-line"></i>
+                                            <h4>Tempo Mediano</h4>
+                                            <p>O tempo mediano de resposta dos atendentes humanos é na verdade melhor do que parecia (<span class="highlight">1,77 minutos</span>).</p>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div class="insight-box">
+                                            <i class="fas fa-clock"></i>
+                                            <h4>Consistência por Dia</h4>
+                                            <p>A variação entre os dias da semana é menor do que parecia inicialmente, sugerindo uma consistência maior no atendimento.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="key-insight">
+                                    <h3><i class="fas fa-cogs"></i> Aplicações Práticas</h3>
+                                    <ul>
+                                        <li>Ajustar a escala de trabalho para cobrir melhor os horários críticos (5h, 6h e 21h)</li>
+                                        <li>Estabelecer metas mais realistas de tempo de resposta baseadas no novo tempo mediano</li>
+                                        <li>Identificar os melhores horários para treinamentos e reuniões (quando o volume de atendimento é menor)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 5: Impacto do Tempo de Resposta -->
+                <section class="slide" id="slide-5">
+                    <div class="slide-content">
+                        <div class="slide-header">
+                            <h2>O Impacto do Tempo de Resposta</h2>
+                        </div>
+                        <div class="slide-body modern-slide">
+                            <div class="insights-wrapper">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <i class="fas fa-lightbulb insight-icon"></i>
+                                        <div class="card-text">
+                                            <h3>Conclusões da Nova Análise</h3>
+                                            <ul class="conclusions">
+                                                <li>O tempo médio de resposta humana é de <span class="highlight">8,69 minutos</span></li>
+                                                <li>O tempo mediano é de apenas <span class="highlight">1,77 minutos</span>, 47% menor que o valor anterior</li>
+                                                <li>O tempo médio é maior que o mediano devido a alguns casos que demoram mais</li>
+                                                <li>A análise de <span class="highlight">28.703 interações</span> confirma a importância de resposta rápida</li>
+                                                <li>A consistência entre os dias da semana é maior do que parecia inicialmente</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="research-data">
+                                <h3><i class="fas fa-chart-line"></i> Tempo de Resposta vs Taxa de Conversão</h3>
+                                
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Tempo de Resposta</th>
+                                                <th>Taxa de Conversão Média</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>≤ 1 minuto</td>
+                                                <td class="highlight-value">23%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1-5 minutos</td>
+                                                <td>18%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5-30 minutos</td>
+                                                <td>9%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>> 24 horas</td>
+                                                <td>1%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="key-insight">
+                                    <p>Nosso tempo mediano atual de <span class="highlight-value">1,77 minutos</span> nos coloca em posição privilegiada de conversão potencial, mas os horários críticos (5h, 6h e 21h) ainda precisam de melhorias.</p>
+                                </div>
+                                
+                                <div class="data-source">Nova análise com 28.703 interações (2024)</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

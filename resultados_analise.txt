@@ -1,0 +1,74 @@
+==================================================
+ANÁLISE DE ATENDIMENTO - HOSPITAL VETERINÁRIO SANTA VIDA
+DADOS AMPLIADOS DE 2024
+==================================================
+
+MENSAGENS FORA DO HORÁRIO DE ATENDIMENTO
+--------------------------------------------------
+Total de mensagens de clientes: 1907
+Mensagens fora do horário: 680 (35.66%)
+
+Distribuição por dia da semana:
+  Segunda: 156 mensagens (22.9%)
+  Terça: 130 mensagens (19.1%)
+  Quarta: 78 mensagens (11.5%)
+  Quinta: 112 mensagens (16.5%)
+  Sexta: 29 mensagens (4.3%)
+  Sábado: 77 mensagens (11.3%)
+  Domingo: 98 mensagens (14.4%)
+
+Distribuição por hora do dia (Top 5):
+  17h: 133 mensagens (19.6%)
+  19h: 80 mensagens (11.8%)
+  21h: 72 mensagens (10.6%)
+  20h: 68 mensagens (10.0%)
+  18h: 61 mensagens (9.0%)
+
+
+ANÁLISE DE TEMPO DE RESPOSTA
+--------------------------------------------------
+Conversas analisadas: 132
+Conversas com respostas: 100 (75.8%)
+Tempo médio de resposta: 7.69 minutos
+Tempo mediano de resposta: 3.33 minutos
+Tempo mínimo de resposta: 0.00 minutos
+90% das respostas ocorrem em até: 21.75 minutos
+
+Tempo médio de resposta por dia da semana:
+  Segunda: 7.23 minutos (0 respostas, 0.0%)
+  Terça: 9.82 minutos (0 respostas, 0.0%)
+  Quarta: 8.74 minutos (0 respostas, 0.0%)
+  Quinta: 6.04 minutos (0 respostas, 0.0%)
+  Sexta: 6.03 minutos (0 respostas, 0.0%)
+  Sábado: 9.32 minutos (0 respostas, 0.0%)
+  Domingo: 6.38 minutos (0 respostas, 0.0%)
+
+Tempo médio de resposta por hora do dia (horário comercial):
+  8h: 7.27 minutos (0 respostas, 0.0%)
+  9h: 8.84 minutos (0 respostas, 0.0%)
+  10h: 7.37 minutos (0 respostas, 0.0%)
+  11h: 6.96 minutos (0 respostas, 0.0%)
+  12h: 6.30 minutos (0 respostas, 0.0%)
+  13h: 10.04 minutos (0 respostas, 0.0%)
+  14h: 9.15 minutos (0 respostas, 0.0%)
+  15h: 6.63 minutos (0 respostas, 0.0%)
+  16h: 7.23 minutos (0 respostas, 0.0%)
+  17h: 8.91 minutos (0 respostas, 0.0%)
+
+
+CONCLUSÕES E RECOMENDAÇÕES
+--------------------------------------------------
+1. 35.66% das mensagens dos clientes são enviadas fora do horário de atendimento.
+   - Recomendação: Implementar chatbot para atendimento automático fora do horário comercial.
+   - Benefício: Melhorar experiência do cliente com respostas imediatas 24/7.
+
+2. O tempo médio de resposta atual é de 7.69 minutos.
+   - Recomendação: Implementar resposta automática para perguntas frequentes.
+   - Benefício: Reduzir tempo de resposta e liberar atendentes para casos mais complexos.
+
+A implementação de soluções baseadas em IA pode resultar em:
+- Atendimento 24/7 para questões básicas e agendamentos
+- Redução de 80-90% no tempo de resposta para perguntas frequentes
+- Maior satisfação dos clientes com respostas instantâneas
+- Melhor aproveitamento do tempo dos atendentes
+- Aumento de conversão de consultas em agendamentos

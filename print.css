@@ -1,0 +1,95 @@
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+    }
+    
+    .presentation-container {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        overflow: visible;
+    }
+    
+    .controls {
+        display: none;
+    }
+    
+    .slide {
+        position: relative;
+        display: block !important;
+        opacity: 1 !important;
+        page-break-after: always;
+        height: 100vh;
+        overflow: visible;
+    }
+    
+    .slide:last-child {
+        page-break-after: avoid;
+    }
+    
+    .slide-content {
+        height: auto;
+    }
+    
+    /* Estilos para garantir que as cores apareçam na impressão */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Ajustes para melhorar a legibilidade no PDF */
+    .slide-header h1,
+    .slide-header h2 {
+        font-size: 2rem;
+    }
+    
+    .stat-value {
+        font-size: 3rem;
+    }
+    
+    .chart img,
+    .architecture-diagram img,
+    .distribution-chart img {
+        max-width: 90%;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    /* Garantir que todos os elementos cabem em uma página */
+    .charts-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .chart {
+        width: 45%;
+    }
+    
+    .business-benefit-container {
+        flex-wrap: wrap;
+    }
+    
+    .business-benefit {
+        width: 30%;
+    }
+    
+    /* Reduzir o tamanho dos ícones */
+    .intro-image i {
+        font-size: 3rem;
+    }
+    
+    /* Ajustar cor de fundo dos elementos para garantir que apareçam no PDF */
+    .slide-reflection,
+    .insight-box,
+    .callout,
+    .benefit-item,
+    .business-benefit,
+    .roi-callout,
+    .final-cta {
+        background-color: #f5f7ff !important;
+        border: 1px solid #ddd !important;
+    }
+} 
