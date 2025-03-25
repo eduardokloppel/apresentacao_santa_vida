@@ -1682,4 +1682,87 @@ body {
 
 .chart-wrapper:hover::after {
     opacity: 1;
+}
+
+/* Novos estilos para colunas e insights */
+.columns-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.column {
+    flex: 1;
+}
+
+.insight-box {
+    background-color: var(--background-light);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--shadow-light);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.insight-box i {
+    color: var(--primary);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.insight-box h4 {
+    color: var(--text-dark);
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.insight-box p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.insight-icon {
+    color: var(--primary);
+    font-size: 32px;
+    margin-right: 15px;
+}
+
+/* Ajuste para key-insight */
+.key-insight {
+    background-color: rgba(var(--primary-rgb), 0.1);
+    border-left: 4px solid var(--primary);
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+.key-insight h3 {
+    color: var(--primary);
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.key-insight h3 i {
+    color: var(--primary);
+}
+
+.key-insight ul {
+    margin: 10px 0 0 25px;
+    padding: 0;
+}
+
+.key-insight li {
+    margin-bottom: 8px;
+}
+
+.key-insight p {
+    margin: 0;
+    line-height: 1.6;
 } 
